@@ -94,6 +94,55 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Contact form AJAX submission with toast
+  var contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = contactForm.querySelector('.submit-button');
+      var originalText = btn.textContent;
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(res) {
+        if (res.ok) {
+          contactForm.reset();
+          showToast('Message sent successfully! We\'ll be in touch soon.', 'success');
+        } else {
+          showToast('Something went wrong. Please try again or email us directly.', 'error');
+        }
+      }).catch(function() {
+        showToast('Network error. Please check your connection and try again.', 'error');
+      }).finally(function() {
+        btn.textContent = originalText;
+        btn.disabled = false;
+      });
+    });
+  }
+
+  function showToast(message, type) {
+    var existing = document.querySelector('.toast');
+    if (existing) existing.remove();
+
+    var toast = document.createElement('div');
+    toast.className = 'toast toast-' + type;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    requestAnimationFrame(function() {
+      toast.classList.add('toast-visible');
+    });
+
+    setTimeout(function() {
+      toast.classList.remove('toast-visible');
+      setTimeout(function() { toast.remove(); }, 400);
+    }, 5000);
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
