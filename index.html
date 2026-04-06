@@ -11,11 +11,9 @@
   <!-- Open Graph tags for social sharing -->
   <meta property="og:title" content="Mkubo Engineers - Civil Engineering Modelling Services" />
   <meta property="og:description" content="Transform your engineering designs into detailed, construction-ready outputs with our CAD and BIM expertise." />
-  <meta property="og:image" content="https://yourdomain.com/images/og-image.jpg" />
   
   <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23174f7c'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,sans-serif' font-weight='700' font-size='18' fill='white'%3EM%3C/text%3E%3C/svg%3E" />
   
   <!-- External CSS -->
   <link rel="stylesheet" href="styles.css" />
@@ -44,16 +42,29 @@
 
   <section class="hero">
     <div class="hero-background"></div>
-    <div class="hero-pattern"></div>
-    <div class="hero-grid"></div>
+    <div class="hero-pattern" data-parallax="0.3"></div>
+    <div class="hero-grid" data-parallax="0.15"></div>
+    <div class="hero-shapes" aria-hidden="true">
+      <div class="hero-float hero-float-1" data-parallax="0.4"></div>
+      <div class="hero-float hero-float-2" data-parallax="0.55"></div>
+      <div class="hero-float hero-float-3" data-parallax="0.25"></div>
+      <div class="hero-line hero-line-1" data-parallax="0.2"></div>
+      <div class="hero-line hero-line-2" data-parallax="0.35"></div>
+    </div>
     <div class="container hero-content">
-      <h1>Civil Engineering Modelling & Documentation Excellence</h1>
+      <span class="hero-eyebrow">Civil Engineering Services — New Zealand</span>
+      <h1>Precision Modelling &amp;<br>Documentation Excellence</h1>
       <p>Your trusted technical partner for transforming engineering designs into precise, construction-ready outputs. We deliver high-quality CAD plans, BIM models, and technical visualisations — engineered to your exact specifications.</p>
       <div class="hero-buttons">
         <a href="#services" class="hero-cta">Explore Our Services</a>
-        <a href="#contact" class="hero-secondary">Request a Quote</a>
+        <a href="mailto:enquiries@mkubo.com?subject=Quote%20Request" class="hero-secondary">Request a Quote</a>
       </div>
     </div>
+    <a href="#services" class="scroll-indicator" aria-label="Scroll to services">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+    </a>
   </section>
 
   <section id="services" class="services">
@@ -66,104 +77,104 @@
       <h2>Engineering Services</h2>
       <p class="section-subtitle">We transform your engineering designs into precise, construction-ready deliverables using industry-leading tools and workflows.</p>
       
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-card-inner">
-            <div class="service-icon">
-              <span>CAD</span>
+      <div class="services-tabs" role="tablist" aria-label="Service categories">
+        <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-drafting" data-tab="drafting">
+          <span class="tab-icon">CAD</span>
+          <span class="tab-label">Drafting &amp; Documentation</span>
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-modelling" data-tab="modelling">
+          <span class="tab-icon">3D</span>
+          <span class="tab-label">3D &amp; BIM Modelling</span>
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-infrastructure" data-tab="infrastructure">
+          <span class="tab-icon">GEO</span>
+          <span class="tab-label">Infrastructure &amp; Earthworks</span>
+        </button>
+      </div>
+      
+      <div class="tab-panels">
+        <div class="tab-panel active" id="tab-drafting" role="tabpanel">
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-card-inner">
+                <div class="service-icon"><span>CAD</span></div>
+                <h3>CAD Drafting &amp; Documentation</h3>
+                <p>Production of precise, standards-compliant 2D plans, cross sections, long sections, detail sheets, and title blocks with attention to dimensional accuracy.</p>
+              </div>
             </div>
-            <h3>CAD Drafting & Documentation</h3>
-            <p>Production of precise, standards-compliant 2D plans, cross sections, long sections, detail sheets, and title blocks with attention to dimensional accuracy.</p>
+            <div class="service-card">
+              <div class="service-card-inner">
+                <div class="service-icon"><span>PLN</span></div>
+                <h3>Network Plans</h3>
+                <p>Detailed plan views of utility networks showing pipe alignments, node locations, valve placements, and connection points with comprehensive annotation and dimensioning.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-card-inner">
+                <div class="service-icon"><span>PRF</span></div>
+                <h3>Profiles for Gravity Systems</h3>
+                <p>Precise longitudinal profiles for gravity-fed systems showing pipe inverts, ground levels, gradients, and hydraulic grade lines to ensure optimal flow performance.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-card-inner">
+                <div class="service-icon"><span>RSM</span></div>
+                <h3>Rising Main Profiles</h3>
+                <p>Specialized profiles for pressurized rising mains including pump station connections, air valve locations, scour points, and pressure analysis documentation.</p>
+              </div>
+            </div>
           </div>
         </div>
         
-        <div class="service-card">
-          <div class="service-card-inner">
-            <div class="service-icon">
-              <span>3D</span>
+        <div class="tab-panel" id="tab-modelling" role="tabpanel">
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-card-inner">
+                <div class="service-icon"><span>3D</span></div>
+                <h3>Civil 3D Modelling</h3>
+                <p>Advanced surface, corridor, and pipe network modelling based on your design parameters, producing outputs including profiles, sections, and quantity take-offs.</p>
+              </div>
             </div>
-            <h3>Civil 3D Modelling</h3>
-            <p>Advanced surface, corridor, and pipe network modelling based on your design parameters, producing outputs including profiles, sections, and quantity take-offs.</p>
+            <div class="service-card">
+              <div class="service-card-inner">
+                <div class="service-icon"><span>BIM</span></div>
+                <h3>BIM Federation &amp; Clash Detection</h3>
+                <p>Multi-discipline model assembly and coordination in Navisworks for comprehensive clash analysis with structured issue tracking and resolution workflows.</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-card-inner">
+                <div class="service-icon"><span>VIZ</span></div>
+                <h3>InfraWorks Visualisations</h3>
+                <p>Creation of visually rich concept models and animations using your engineering data — optimized for stakeholder presentations and preliminary design reviews.</p>
+              </div>
+            </div>
           </div>
         </div>
         
-        <div class="service-card">
-          <div class="service-card-inner">
-            <div class="service-icon">
-              <span>BIM</span>
+        <div class="tab-panel" id="tab-infrastructure" role="tabpanel">
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-card-inner">
+                <div class="service-icon"><span>GEO</span></div>
+                <h3>Earthworks &amp; Grading Models</h3>
+                <p>Comprehensive platform shaping to cut/fill balance and surface exports — built with precision directly from your terrain and layout specifications.</p>
+              </div>
             </div>
-            <h3>BIM Federation & Clash Detection</h3>
-            <p>Multi-discipline model assembly and coordination in Navisworks for comprehensive clash analysis with structured issue tracking and resolution workflows.</p>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-card-inner">
-            <div class="service-icon">
-              <span>VIZ</span>
+            <div class="service-card">
+              <div class="service-card-inner">
+                <div class="service-icon"><span>ROW</span></div>
+                <h3>Road Geometry &amp; Utility Layouts</h3>
+                <p>Accurate modelling of road centerlines, alignments, and utility routes as per your design drawings, optimized for Civil 3D or GIS-compatible outputs.</p>
+              </div>
             </div>
-            <h3>InfraWorks Visualisations</h3>
-            <p>Creation of visually rich concept models and animations using your engineering data — optimized for stakeholder presentations and preliminary design reviews.</p>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-card-inner">
-            <div class="service-icon">
-              <span>GEO</span>
+            <div class="service-card">
+              <div class="service-card-inner">
+                <div class="service-icon"><span>WTR</span></div>
+                <h3>Three Water Pipe Networks</h3>
+                <p>Complete modelling of water supply, wastewater, and stormwater networks with detailed pipe layouts, sizing, and connectivity documentation to industry standards.</p>
+              </div>
             </div>
-            <h3>Earthworks & Grading Models</h3>
-            <p>Comprehensive platform shaping to cut/fill balance and surface exports — built with precision directly from your terrain and layout specifications.</p>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-card-inner">
-            <div class="service-icon">
-              <span>ROW</span>
-            </div>
-            <h3>Road Geometry & Utility Layouts</h3>
-            <p>Accurate modelling of road centerlines, alignments, and utility routes as per your design drawings, optimized for Civil 3D or GIS-compatible outputs.</p>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-card-inner">
-            <div class="service-icon">
-              <span>WTR</span>
-            </div>
-            <h3>Three Water Pipe Networks</h3>
-            <p>Complete modelling of water supply, wastewater, and stormwater networks with detailed pipe layouts, sizing, and connectivity documentation to industry standards.</p>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-card-inner">
-            <div class="service-icon">
-              <span>PLN</span>
-            </div>
-            <h3>Network Plans</h3>
-            <p>Detailed plan views of utility networks showing pipe alignments, node locations, valve placements, and connection points with comprehensive annotation and dimensioning.</p>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-card-inner">
-            <div class="service-icon">
-              <span>PRF</span>
-            </div>
-            <h3>Profiles for Gravity Systems</h3>
-            <p>Precise longitudinal profiles for gravity-fed systems showing pipe inverts, ground levels, gradients, and hydraulic grade lines to ensure optimal flow performance.</p>
-          </div>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-card-inner">
-            <div class="service-icon">
-              <span>RSM</span>
-            </div>
-            <h3>Rising Main Profiles</h3>
-            <p>Specialized profiles for pressurized rising mains including pump station connections, air valve locations, scour points, and pressure analysis documentation.</p>
           </div>
         </div>
       </div>
@@ -179,42 +190,42 @@
       <div class="tech-logos">
         <div class="tech-logo">
           <div class="tech-logo-icon">
-            <img src="images/civil3d.png" alt="Autodesk Civil 3D logo" class="tech-logo-img" />
+            <span class="tech-logo-abbr">C3D</span>
           </div>
           <span class="tech-logo-name">Civil 3D</span>
         </div>
         
         <div class="tech-logo">
           <div class="tech-logo-icon">
-            <img src="images/autocad.png" alt="AutoCAD logo" class="tech-logo-img" />
+            <span class="tech-logo-abbr">ACAD</span>
           </div>
           <span class="tech-logo-name">AutoCAD</span>
         </div>
         
         <div class="tech-logo">
           <div class="tech-logo-icon">
-            <img src="images/navisworks.png" alt="Navisworks logo" class="tech-logo-img" />
+            <span class="tech-logo-abbr">NW</span>
           </div>
           <span class="tech-logo-name">Navisworks</span>
         </div>
         
         <div class="tech-logo">
           <div class="tech-logo-icon">
-            <img src="images/infraworks.png" alt="InfraWorks logo" class="tech-logo-img" />
+            <span class="tech-logo-abbr">IW</span>
           </div>
           <span class="tech-logo-name">InfraWorks</span>
         </div>
         
         <div class="tech-logo">
           <div class="tech-logo-icon">
-            <img src="images/revit.png" alt="Revit logo" class="tech-logo-img" />
+            <span class="tech-logo-abbr">RVT</span>
           </div>
           <span class="tech-logo-name">Revit & IFC</span>
         </div>
         
         <div class="tech-logo">
           <div class="tech-logo-icon">
-            <img src="images/bim360.png" alt="BIM 360 logo" class="tech-logo-img" />
+            <span class="tech-logo-abbr">ACC</span>
           </div>
           <span class="tech-logo-name">BIM 360 / ACC</span>
         </div>
@@ -230,8 +241,8 @@
       
       <div class="project-grid">
         <div class="project-card">
-          <div class="project-image">
-            <img src="images/project1.jpg" alt="Commercial Development Project" />
+          <div class="project-image project-placeholder project-placeholder-1">
+            <div class="project-placeholder-label">CAD</div>
             <div class="project-overlay">
               <span class="project-category">Commercial Development</span>
             </div>
@@ -253,8 +264,8 @@
         </div>
         
         <div class="project-card">
-          <div class="project-image">
-            <img src="images/project2.jpg" alt="Residential Subdivision" />
+          <div class="project-image project-placeholder project-placeholder-2">
+            <div class="project-placeholder-label">BIM</div>
             <div class="project-overlay">
               <span class="project-category">Residential Infrastructure</span>
             </div>
@@ -276,8 +287,8 @@
         </div>
         
         <div class="project-card">
-          <div class="project-image">
-            <img src="images/project3.jpg" alt="Transportation Corridor" />
+          <div class="project-image project-placeholder project-placeholder-3">
+            <div class="project-placeholder-label">GEO</div>
             <div class="project-overlay">
               <span class="project-category">Transportation</span>
             </div>
@@ -349,34 +360,24 @@
       <h2>Get In Touch</h2>
       <p class="section-subtitle">Let us transform your engineering designs into precise, construction-ready documentation and models.</p>
       
-      <div class="contact-grid">
+      <div class="contact-grid contact-grid-centered">
         <div>
           <div class="contact-info-card">
             <h3 class="contact-info-title">Contact Information</h3>
             <div class="contact-info-items">
               <div class="contact-info-item">
                 <div class="contact-info-icon">
-                  <svg xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 </div>
                 <div class="contact-info-content">
                   <h4>Email</h4>
-                  <a href="mailto:info@mkuboengineers.co.nz">info@mkuboengineers.co.nz</a>
+                  <a href="mailto:enquiries@mkubo.com">enquiries@mkubo.com</a>
                 </div>
               </div>
               
               <div class="contact-info-item">
                 <div class="contact-info-icon">
-                  <svg xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                </div>
-                <div class="contact-info-content">
-                  <h4>Phone</h4>
-                  <a href="tel:+6491234567">+64 9 123 4567</a>
-                </div>
-              </div>
-              
-              <div class="contact-info-item">
-                <div class="contact-info-icon">
-                  <svg xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 </div>
                 <div class="contact-info-content">
                   <h4>Location</h4>
@@ -384,43 +385,9 @@
                 </div>
               </div>
             </div>
+            
+            <a href="mailto:enquiries@mkubo.com?subject=Quote%20Request" class="contact-cta-button">Request a Quote</a>
           </div>
-        </div>
-        
-        <div class="contact-form">
-          <div class="form-header">
-            <h3 class="form-title">Project Inquiry</h3>
-            <p class="form-subtitle">Tell us about your engineering documentation needs</p>
-          </div>
-          
-          <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="Your email address" required />
-            </div>
-            
-            <div class="form-group">
-              <label for="message">Project Details</label>
-              <textarea id="message" name="message" rows="4" placeholder="Describe your engineering documentation needs" required></textarea>
-            </div>
-            
-            <div class="form-group">
-              <div class="file-upload">
-                <div class="file-icon">📁</div>
-                <label class="file-label">Upload Files (Optional)</label>
-                <span class="file-hint">Max 10MB - CAD, PDF, or image files</span>
-                <input type="file" id="file" name="file" accept=".dwg,.pdf,.dxf,.jpg,.png" />
-              </div>
-            </div>
-            
-            <div id="form-status"></div>
-            <button type="submit" class="submit-button">Submit Inquiry</button>
-          </form>
         </div>
       </div>
     </div>
@@ -445,23 +412,14 @@
         <div class="footer-col">
           <h3 class="footer-heading">Company</h3>
           <ul class="footer-links">
-            <li><a href="#">About Us</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#">Careers</a></li>
+            <li><a href="#benefits">Why Us</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h3 class="footer-heading">Connect</h3>
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="LinkedIn">in</a>
-            <a href="#" class="social-link" aria-label="Twitter">t</a>
-            <a href="#" class="social-link" aria-label="Facebook">f</a>
-          </div>
-        </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Mkubo Engineers. All rights reserved.</p>
+        <p>&copy; <span id="footer-year"></span> Mkubo Engineers Ltd. All rights reserved.</p>
       </div>
     </div>
   </footer>
