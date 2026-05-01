@@ -109,12 +109,15 @@ document.addEventListener('DOMContentLoaded', function() {
         body: new FormData(contactForm),
         headers: { 'Accept': 'application/json' }
       }).then(function(res) {
-        if (res.ok) {
-          contactForm.reset();
-          showToast('Message sent successfully! We\'ll be in touch soon.', 'success');
-        } else {
-          showToast('Something went wrong. Please try again or email us directly.', 'error');
-        }
+        return res.json().catch(function() { return null; }).then(function(data) {
+          var ok = res.ok && data && (data.success === 'true' || data.success === true);
+          if (ok) {
+            contactForm.reset();
+            showToast('Message sent successfully! We\'ll be in touch soon.', 'success');
+          } else {
+            showToast('Something went wrong. Please try again or email us directly.', 'error');
+          }
+        });
       }).catch(function() {
         showToast('Network error. Please check your connection and try again.', 'error');
       }).finally(function() {

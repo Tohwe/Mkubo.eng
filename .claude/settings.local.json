@@ -3,5 +3,9 @@
     "allow": [
       "WebFetch(domain:mkubo.com)"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "claude-flow"
+  ],
+  "enableAllProjectMcpServers": true
 }
